@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simulateur de crédit</title>
+	<link rel="icon" href="../img/ACEs.png">
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	<div class="container">
+		<header class="header clearfix en-tete">
+			<nav>
+				<ul class="nav nav-pills pull-right navig">
+					<li role="presentation" class="">
+						<a href="../index.html">
+							Accueil
+						</a>
+					</li>
+					<li role="presentation">
+						<a href="simulateur.html" class='actif'>
+							Simulateur de crédit
+						</a>
+					</li>
+					<li role="presentation">
+						<a href="contact.html">
+							Contact
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<h3 class='text-muted'><img src="../img/ACEs.png">ACE's Finance</h3>
+		</header>
+
+		<form class="form-horizontal col-lg-6">
+			<div class="form-group ">
+				<legend class='labels form-legend'>Simulation de crédit</legend>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label for="select" class="col-lg-6 labels"><a href="#monnaie_link">Devise : </a></label>
+					<div class="col-lg-6">
+						<select id="monnaie" tabindex='1' class="form-control champ" >
+							<option>HTG</option>
+							<option>USD</option>
+							<option>EUR</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label for="montant" class="col-lg-6 labels warning" ><a href="#montant_link">Montant en <span class='labels' id='monnaie-choisie'></span> : </a><span class="alert alert-danger col-lg-6 pop-up" role="alert">Vous avez tapé une lettre</span></label>
+					<div class="col-lg-6">
+						<input type="number" tabindex='2' class="form-control champ" id="montant">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label for="taux" class="col-lg-6 labels"><a href="#taux_link">Taux en % : </a></label>
+					<div class="col-lg-6">
+						<input type="number" tabindex='3' min='1' max='50' class="form-control champ" id="taux">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label for="duree" class="col-lg-6 labels"><a href="#duree_link">Durée en mois : </a></label>
+					<div class="col-lg-6">
+						<input type="number" tabindex='4' min='1' max='240' class="form-control champ" id="duree">
+					</div>
+				</div>
+				
+			</div>
+
+			<div class='row'>
+				<div class="alert alert-success col-lg-12" role="alert">
+			        <a href="#paiement_link"><strong id='mensualite'>Paiement</strong></a>
+			    </div>
+			    <div class="col-lg-12">
+			        <a href='#echeancier_link'><span class="btn btn-primary btn-lg actif" id='echeancier' href="" role="button">Echéancier</span></a>
+			    </div>
+			</div>
+		</form>
+		<!-- La section des analyses -->
+		<aside class='row'>
+			<div class='col-lg-6'>
+				<div class="panel panel-default bloc_analyse">
+					<!-- Default panel contents -->
+					<div class="panel-heading analyse">
+						Les analyses
+					</div>
+
+					<!-- List group -->
+					<ul class="list-group">
+						<li class="list-group-item"><a href="#montant_dette_link">Le montant total de la dette : <span id='total_dette'></span></a></li>
+						<li class="list-group-item"><a href="#montant_interet_link">Le montant total des intérêts : <span id='total_int'></span></a></li>
+						<li class="list-group-item">
+							<div class="progress">
+							  <div id='progress-mnt' class="progress-bar progress-bar-success progress-bar-striped">
+							    <span id="rate_mnt"></span>
+							  </div>
+							  <div id='progress-int' class="progress-bar progress-bar-warning progress-bar-striped">
+							    <span class="rate_int"></span>
+							  </div>
+							</div>
+							Les intérêts représentent <span class="rate_int">...</span> de la dette totale à l'échéance.
+						</li>
+						<li class="list-group-item">
+							Pour être éligible pour ce prêt, vos <a href="#revenu_link">revenus mensuels</a> après vos taxes et vos <a href="#depense_link">dépenses personnelles</a> doivent être supérieurs ou égaux à <span id='ratio'>...</span>.
+						</li>
+						<li class="list-group-item">Le <a href="#ratio_link">ratio d'endettement</a> doit être inférieur ou égal à <span class="rate_int">30%</span>.
+						</li>
+					</ul>
+				</div>
+			</div>
+		</aside>
+		<section class='col-lg-12'>
+			<table class='table' id='echeancier_link'>
+				<thead></thead>
+				<tbody></tbody>
+			</table>
+		</section>
+		<article class="row marketing">
+			<div class="col-lg-12">
+				<h4 id='monnaie_link'>Devise</h4>
+				<p>
+					C'est l'unité monétaire dans lequel le crédit sera traité par la banque. Toutefois, il appartient à l'emprunteur de choisir la monnaie qui lui conviendra.
+				</p>
+
+				<h4 id='montant_link'>Montant</h4>
+				<p>
+					C'est le montant d'argent qui sera financé à l'emprunteur par la banque. La quantité de ce montant est généralement sollicité par le client, mais elle peut être revue à la baisse, suite à une évaluation de la capacité d'endettement de ce dernier.
+				</p>
+
+				<h4 id='taux_link'>Taux</h4>
+				<p>
+					C'est le taux d'intérêt correspondant au type de prêt traité. Il est généralement fixé selon le taux en vigueur sur le marché bancaire. Cependant, la nature de la relation de l'emprunteur avec le prêteur peut altérer ce dernier. Plus le prêt est risqué, plus ce taux est élevé. Le niveau de risque dépendra de la capacité d'endettement du client. 
+				</p>
+
+				<h4 id='duree_link'>Durée</h4>
+				<p>
+					C'est le temps suivant lequel, le montant de la dette est échelonné. Tout au long de cette période, le client devra effectuer des versements à la banque jusqu'à extinction du montant emprunté. Dans le cas de cette simulation, la durée est exprimée en mois.
+				</p>
+
+				<h4 id='paiement_link'>Paiement</h4>
+				<p>
+					C'est le montant d'argent qui sera régulièrement versé au prêteur par son débiteur. Ce paiement peut être effectué sur une base mensuelle, trimestrielle ou selon une fréquence qui conviendra à la fois au débiteur et au prêteur. De ce fait, la fréquence ainsi que le montant sera déterminée à la signature du contrat de prêt.
+				</p>
+
+				<h4 id='montant_dette_link'>Le montant total de la dette</h4>
+				<p>
+					C’est le cumule des versements effectués par l’emprunteur à l’échéance du prêt. Ce montant est composé du montant principal de la dette et du montant total des intérêts. Néanmoins, le prêt peut être accompagné d’autres frais tels que : frais de dossier (Commission + TCA + Timbres Fiscaux) ou des frais de retard dû aux paiements non effectués à temps.
+				</p>
+
+				<h4 id='montant_interet_link'>Le montant total des intérêts</h4>
+				<p>
+					C’est le cumule des intérêts versés par l’emprunteur tout au long de la durée du prêt. Il est à noter que chaque mensualité versé comprend implicitement une partie qui va amortir le principal et l’autre partie est le paiement des intérêts.
+				</p>
+
+				<h4 id='revenu_link'>Les revenus mensuels</h4>
+				<p>
+					Ce sont les rentrées d’argent mensuelles découlant des activités de l’emprunteur. Dans le cas où l’emprunteur serait un salarié, ce serait le salaire mensuel de base (SMB) correspondant au salaire brut avant déduction des cotisations sociales et avant versement des prestations sociales. Il ne comprend ni les primes ni les heures supplémentaires. Son montant correspond généralement à celui de la première ligne du bulletin de paye d'un salarié.
+					<br/>
+					Si l’emprunteur est à son compte, ces revenus mensuels sont évalués au salaire qu’il se paie lui-même ou le profit mensuel qu’il tire de son activité.
+
+				</p>
+
+				<h4 id='depense_link'>Les dépenses personnelles</h4>
+				<p>
+					Les dépenses de consommation personnelle représentent la majeure partie des dépenses personnelles, qui comprennent également les paiements d’intérêts et les paiements de transfert. Les dépenses de consommation personnelle sont divisées en biens durables, biens non durables et services.
+				</p>
+
+				<h4 id='ratio_link'>Le ratio d’endettement</h4>
+				<p>
+					Le ratio d’endettement est le rapport du paiement mensuel au revenu mensuel de l’emprunteur. Il mesure le poids du paiement mensuel sur le revenu de l’emprunteur ou du moins, il compare le montant du paiement mensuel au revenu de l’emprunteur. 
+					<br/>
+					<span class='bold'>Le calcul simplifié de ce ratio est le suivant :</span>
+					<br/>
+					<span class='in_green'>(Paiement mensuel /Revenu mensuel) x 100</span>
+					<br/>
+					Ce ratio doit être le plus faible possible pour dire que l’emprunteur est peu endetté. Certaines banques, pour agréer un prêt demandent que le ratio soit inférieur ou égal à 30%.
+
+				</p>
+			</div>
+		</article>
+
+		<footer class="footer pied">
+			<p>
+				&copy; 2016 ACE's Finance, Inc.
+			</p>
+		</footer>
+
+	</div> <!-- /container -->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/calcul.js"></script>
+  </body>
+</html>

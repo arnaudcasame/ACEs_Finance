@@ -1,0 +1,649 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed|Ubuntu+Mono);
+/*
+	lightgreen color : #90ee90 ou rgba(144, 238, 144, 1);
+	couleur foncée sac en pitre : #362f29 ou rgba(54, 47, 41 , 1);
+	couleur foncée sac en pitre : #b79a78 ou rgba(183, 154, 120, 1);
+
+
+
+*/
+
+body{
+	font-family: 'ubuntu';
+	background-color: #f5f5f5;
+	padding-top: 20px;
+  	padding-bottom: 20px;
+  	background-image: url(../img/overlay.png);
+}
+
+.container{
+	background-color: #fff;
+	padding-top: 10px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #008000;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #008000;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+}
+
+/*****************************************
+******* Les mesures générales ************
+*****************************************/
+.italic{
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.in_green{
+	color: rgba(0, 128, 0, 1);
+}
+
+article div blockquote.attention{
+	border-left-color: #8A6D3B; /* Couleur de la bordure des warnings de bootstrap*/
+	font-size: 1.1em;
+}
+
+article div blockquote.success{
+	border-left-color: #3C763D; /* Couleur de la bordure des dangers de bootstrap*/
+	font-size: 1.1em;
+}
+
+/*****************************************
+***************** Header *****************
+*****************************************/
+
+/* Header logo customization*/
+body > div > header > h3 > img{
+	width: 5%;
+}
+
+
+/*************************************************
+***************** Navigation Bar *****************
+*************************************************/
+nav ul li a{
+	color: #888;
+	border: solid 1px transparent;
+}
+
+nav ul.nav.pull-right.navig > li a{
+	border-radius: 0px;
+}
+
+nav ul.nav.pull-right.navig > li a:hover{
+	background-color: transparent;
+	border: solid 1px rgba(0, 128, 0, 0.8);
+	color: rgba(0, 128, 0, 0.95);
+	transition: all 0.8s ease-out;
+	-webkit-transition: all 0.8s ease-out;
+	-moz-transition: all 0.8s ease-out;
+	-o-transition: all 0.8s ease-out;
+}
+
+nav ul.nav.pull-right.navig > li a.actif{
+	background-color: rgba(0, 128, 0, 0.1);
+	border: solid 1px rgba(0, 128, 0, 0.8);
+	color: rgba(0, 128, 0, 0.95);
+}
+
+nav ul li a:hover{
+	color: rgba(0, 64, 0, 1);
+}
+/* Navigation Bar End */
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 400px;
+  margin-bottom: 40px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 400px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 400px;
+}
+
+ /* Bump up size of carousel content */
+ .carousel-caption h1{
+   font-size: 30px;
+}
+
+/* Bump up size of carousel content */
+ .carousel-caption p{
+   margin-bottom: 20px;
+   font-size: 21px;
+   line-height: 1.4;
+}
+
+/* Customize carousel buttons */
+body .container div div div div div p a.btn-primary{
+	background-color: transparent;
+	border-color: transparent;
+	color: #fff;
+}
+
+body .container div div div div div p a.btn-primary:hover{
+	background-color: rgba(255, 255, 255, 0.1);
+	border-color: #fff;
+	transition: all 0.8s ease-out;
+	-webkit-transition: all 0.8s ease-out;
+	-moz-transition: all 0.8s ease-out;
+	-o-transition: all 0.8s ease-out;
+}
+
+body .container div div div div div p a.btn-primary:active{
+	background-color: rgba(255, 255, 255, 0.1);
+	border-color: #fff;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+    border-radius: 0px;
+}
+
+/* Customize container */
+@media (max-width: 480px) {
+  	/* Bump up size of carousel content */
+ 	.carousel-caption p{
+   		margin-bottom: 20px;
+   		font-size: 15px;
+   		line-height: 1.4;
+	}
+}
+/* Caroussel END */
+
+
+/* Fluid images settings */
+article div img{
+	max-width: 100%;
+}
+
+body div article div h4{
+	color: rgba(0, 128, 0, 1);
+	background-color: #f5f5f5;
+	padding: 8px;
+}
+
+body div article div p{
+	color: #555;
+}
+
+.container article div p a button,
+.container article div p a button:hover,
+.container article div p a button:target{
+	color: rgba(0, 128, 0, 1);
+}
+
+/************************************************
+************ Page: Simulateur *******************
+************************************************/
+
+.labels a, .labels{
+	color: rgba(0, 128, 0, 1);
+}
+
+.form-legend{
+	border-bottom: 1px solid rgba(0, 128, 0, 1);
+}
+
+.champ{
+	border: 1px solid lightgreen;
+	color: #555;
+}
+
+.champ:focus{
+	border: 1px solid lightgreen;
+	color: #555;
+	-webkit-box-shadow: 0 0 8px 0px lightgreen, inset 0 0 2px rgba(105, 199, 115, 1);
+	-moz-box-shadow:    0 0 8px 0px lightgreen, inset 0 0 2px rgba(105, 199, 115,1);
+	box-shadow:         0 0 8px 0px lightgreen, inset 0 0 2px rgba(105, 199, 115, 1);
+}
+
+.bloc_analyse div.analyse{
+	color: rgba(0, 128, 0, 1);
+	font-size: 1.5em;
+}
+
+.bloc_analyse{
+	margin-top: 8%;
+}
+
+.bloc_analyse ul.list-group li.list-group-item{
+	color: #555;
+}
+
+#total_dette, #total_int, li > .rate_int, #ratio{
+	color: rgba(0, 128, 0, 1);
+}
+
+li > .rate_int, #ratio{
+	font-weight: bold;
+}
+
+.row div.alert a, .list-group-item a{
+	color: rgba(0, 128, 0, 1);
+}
+
+.warning{
+	position: relative;
+}
+
+.pop-up{
+	display: none;
+	position: absolute;
+	height: 30px;
+	width: 180px;
+	padding: 2px;
+	left: 5px;
+	font-weight: normal;
+	text-align: center;
+	opacity: 0;
+	animation: animationFrames linear 5s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	
+	-webkit-animation: animationFrames linear 5s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+
+	-moz-animation: animationFrames linear 5s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-fill-mode: forwards;
+
+	-o-animation: animationFrames linear 5s;
+	-o-animation-iteration-count: 1;
+	-o-animation-fill-mode: forwards;
+
+	-ms-animation: animationFrames linear 5s;
+	-ms-animation-iteration-count: 1;
+	-ms-animation-fill-mode: forwards;
+}
+
+@keyframes animationFrames{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes animationFrames{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animationFrames {
+  0% {
+   
+    opacity: 0;
+  }
+  100% {
+    
+    opacity: 1;
+  }
+}
+
+@-o-keyframes animationFrames {
+  0% {
+   
+    opacity: 0;
+  }
+  100% {
+    
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes animationFrames {
+  0% {
+   
+    opacity: 0;
+  }
+  100% {
+    
+    opacity: 1;
+  }
+}
+
+div.container form div.row div span#echeancier{
+	background-color: rgba(0, 128, 0, 0.8);
+	border: rgba(0, 128, 0, 1);
+}
+
+.container section table{
+	border: 1px solid rgba(0, 128, 0, 0.8);
+}
+
+.container section table caption{
+	text-transform: uppercase;
+	background-color: rgba(0, 128, 0, 0.8);
+	color: #fff;
+	padding-top: .6em;
+	font-weight: bolder;
+	text-align: center;
+}
+
+thead tr{
+	background: rgba(0, 128, 0, 0.8) url(../img/diag_pattern.png) repeat-x center top;
+	color: #fff;
+}
+
+thead th{
+	background: none;
+}
+
+.container section table tbody tr:nth-child(even){
+	background-color: rgba(0, 128, 0, 0.4);
+}
+
+.container section table tbody tr:nth-child(odd){
+	background-color: rgba(0, 128, 0, 0.1);
+	color: rgba(0, 128, 0, 0.9);
+}
+
+.container section table tbody tr:nth-child(even):hover{
+	background-color: rgba(0, 128, 0, 0.8);
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.container section table tbody tr:nth-child(odd):hover{
+	background-color: #fff;
+	color: rgba(0, 128, 0, 0.8);
+	font-weight: bold;
+	cursor: pointer;
+}
+
+
+/************************************************
+************** Page: Contact ********************
+************************************************/
+
+.container .jumbotron h4 img{
+	cursor: pointer;
+	width: 10%;
+}
+
+.container .jumbotron h4 img:hover{
+	background-color: rgba(0, 128, 0, 0.4);
+}
+
+/************************************************
+************** Page: Construction ***************
+************************************************/
+.construction{
+	margin: 10% auto 10% auto;
+}
+
+/************************************************
+************** Page: evaluation *****************
+************************************************/
+.label-link{
+	margin-top: 5px;
+}
+
+.label-link div.alert a{
+	color: #8A6D3B;
+}
+
+body .container section div div a{
+	font-family: ubuntu;
+}
+
+body .container section h3, 
+body .container section article h4{
+	color: rgba(0, 128, 0, 1);
+	background-color: #f5f5f5;
+	padding: 2%;
+}
+
+body .container section article p,
+body .container section article div ul li p,
+body .container section article p{
+	color: #555;
+}
+
+body .container section article div ul li div p{
+	color: inherit;
+}
+
+body .container section article h5{
+	color: rgba(0, 128, 0, 1);
+	font-size: 1.05em;
+}
+
+body .container section article div div.panel-heading{
+	font-size: 1.2em;
+	font-weight: bold;
+	color: rgba(0, 128, 0, 1);
+}
+
+.titre_formulaire{
+	margin-top: 1.5%;
+}
+
+.titre_formulaire legend{
+	color: rgba(0, 128, 0, 1);
+	border-color: #008000;
+}
+
+.titre_formulaire h4{
+	color: #555;
+}
+
+/*********************************************
+************** Page: erreurs *****************
+*********************************************/
+
+p.accnav
+{
+	font-size: 1.1em;
+	text-transform: uppercase;
+	text-align: right;
+}
+
+p.accnav a
+{
+	text-decoration: none;
+	color: #999;
+}
+
+
+ul.accordeon{
+	display: block;
+	padding: 0.5em 0.5em 1px 0.5em;
+	background-color: #f5f5f5;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+}
+
+ul.accordeon li
+{
+	display: block;
+	height: 2em;
+	padding: 0 1em;
+	margin: 0 0 0.5em 0;
+	color: #333;
+	background-color: #f5f5f5;
+	overflow: hidden;
+	border-bottom: 1px solid #008000;
+	border-top: none;
+}
+
+ul.accordeon li h5
+{
+	font-size: 1em;
+	font-weight: bold;
+	width: 100%;
+	line-height: 2em;
+	padding: 0;
+	margin: 0;
+	color: rgba(0, 128, 0, 1);
+}
+
+ul.accordeon li h5 a
+{
+	display: block;
+	width: 100%;
+	line-height: 2em;
+	text-decoration: none;
+	color: inherit;
+	outline: 0 none;
+}
+
+ul.accordeon li,
+ul.accordeon li h5
+{
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+ul.accordeon li:target
+{
+	height: 20em;
+	background-color: #fff;
+	color: #555;
+}
+
+ul.accordeon li:target .glyphicon-circle-arrow-down{
+	display: none;
+}
+
+.glyphicon-circle-arrow-down{
+	font-size: 0.85em;
+	margin-left: 1em;
+}
+
+ul.accordeon li:target h5
+{
+	font-size: 1.6em;
+	color: rgba(0, 128, 0, 1);
+}
+
+/* Customize accordeon at 480px wide */
+@media (max-width: 480px) {
+	/* Sa pèmèt mwen jere gwosè tit 
+	erè yo leuh lajè ekran an a 480px */
+  	ul.accordeon li:target h5{
+		font-size: 1.3em;
+		color: rgba(0, 128, 0, 1);
+	}
+
+	ul.accordeon li:target{
+		overflow-y: scroll;
+	}
+
+	ul.accordeon li:target .glyphicon-circle-arrow-down{
+		display: none;
+	}
+}
+
+/************************************************
+************** Page: dépenses *******************
+************************************************/
+body .container section article div p,
+body .container section article div ol{
+	color: inherit;
+}
+
+ol.liste-ordonnee li{
+	color: #555;
+}
+
+body .container section h3.col-lg-12{
+	width: 98%;
+	margin: 0 1% 1% 1%;
+}
+
+body .container section article img.thumbnail{
+	max-width: 100%;
+	margin: 0 1% 1% 0;
+}
+
+body .container section article img.thumbnail .col-lg-4{
+	margin-bottom: 1%;
+}
